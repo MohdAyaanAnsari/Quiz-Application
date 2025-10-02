@@ -33,10 +33,11 @@ quiz-app/
 │── script.js # Quiz logic (questions, answers, validation)
 │── README.md # Project documentation
 
-📸 Screenshots (Optional)
+📸 Screenshots
 #Desktop
 <img width="1366" height="729" alt="image" src="https://github.com/user-attachments/assets/ce25679e-cf55-4006-9d47-b28785c64830" />
 #Mobile
+
 <img width="217" height="467" alt="image" src="https://github.com/user-attachments/assets/02d0ff4c-0bf6-4015-ab1b-0692be9ce9cc" />
 
 
