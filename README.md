@@ -45,4 +45,5 @@ quiz-app/
 🧑‍💻 Author
 
 Mohd Ayaan Ansari
+
 Web Designer | Web Developer | CS Student
