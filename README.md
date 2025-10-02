@@ -27,10 +27,14 @@ This project helps users test their knowledge of frontend technologies in a fun 
 ## 📂 Project Structure
 
 quiz-app/
-│── Assets/ 
+│── Assets/
+|
 │── index.html # Main HTML file
+|
 │── style.css # Styling
+|
 │── script.js # Quiz logic (questions, answers, validation)
+|
 │── README.md # Project documentation
 
 📸 Screenshots
