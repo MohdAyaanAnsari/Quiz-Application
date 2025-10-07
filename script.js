@@ -59,6 +59,7 @@ let Two = document.querySelector(`#two`);
 let Three = document.querySelector(`#three`);
 let Four = document.querySelector(`#four`);
 let option = document.querySelectorAll('.option')
+let Qnum = document.getElementById('Qnum')
 Question.innerText = `${questions[0].Q}`
 One.innerText = `${questions[0].option[0]}`
 Two.innerText = `${questions[0].option[1]}`
@@ -88,7 +89,7 @@ function nextQuestion() {
         i++;
         document.querySelector('.bar').firstElementChild.style.width = `${parseInt(barstatus)}%`;
         Default()
-        console.log(i);
+        Qnum.innerText = ` ${i+1}`
         Question.innerText = `${questions[i].Q}`
         One.innerText = `${questions[i].option[0]}`
         Two.innerText = `${questions[i].option[1]}`
@@ -103,12 +104,9 @@ function previousQuestion() {
     if (i > 0) {
         barstatus -= 10;
         i--;
-        option.forEach(e =>{
-            e.classList.remove('fade');
-            e.disabled = false;
-        });
         document.querySelector('.bar').firstElementChild.style.width = `${parseInt(barstatus)}%`;
         Default()
+        Qnum.innerText = ` ${i+1}`
         Question.innerText = `${questions[i].Q}`
         One.innerText = `${questions[i].option[0]}`
         Two.innerText = `${questions[i].option[1]}`
@@ -144,4 +142,5 @@ option.forEach(e => {
         }
     });
   });
+
 });
