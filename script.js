@@ -1,8 +1,8 @@
 let questions = [
     {
-        "Q": "Which language is known as the backbone of web development?",
-        "option": ["Python", "Java", "JavaScript", "C++"],
-        "A": "JavaScript"
+        "Q": "What is type safe version of javascript",
+        "option": ["Python", "Java", "EcmaScript", "Typescript"],
+        "A": "TypeScript"
     },
     {
         "Q": "Which of the following is NOT a programming language?",
