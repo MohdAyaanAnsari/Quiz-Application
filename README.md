@@ -1,3 +1,8 @@
+<img width="2560" height="1600" alt="mohdayaanansari github io_Quiz-Application_(Nest Hub Max)" src="https://github.com/user-attachments/assets/e5b714cf-f58f-4d50-be03-539b4ec51a81" />
+<img width="2560" height="1600" alt="mohdayaanansari github io_Quiz-Application_(Nest Hub Max) (2)" src="https://github.com/user-attachments/assets/f6c50a33-356c-45e8-a585-4110a97f2375" />
+<img width="2560" height="1600" alt="mohdayaanansari github io_Quiz-Application_(Nest Hub Max) (3)" src="https://github.com/user-attachments/assets/e4e4c15b-909f-4d35-b6e7-6ec6d2b11df2" />
+
+
 # 🎯 Quiz App
 
 An interactive **Quiz Application** built using **HTML, Tailwind CSS, and JavaScript**.  
@@ -64,18 +69,6 @@ https://opentdb.com/api.php?amount=10&category=11&type=multiple
 5. User clicks **Next Question** / **Finish Quiz** to proceed
 6. **Result screen** shows total score, correct answers, and wrong answers
 7. User can **Play Again** (new API fetch) or go **Back** to the home screen
-
----
-
-## 📸 Screenshots
-
-### Desktop
-![Desktop Screenshot](https://github.com/user-attachments/assets/258ddb6f-a6c7-4ff4-894a-ad12c5e5ca7f)
-
-### Mobile
-<!-- Add your mobile screenshot here -->
-
----
 
 ## 🧑‍💻 Author
 
