@@ -23,29 +23,38 @@ let answered = false;
 async function fetchQuestions() {
   try {
     const response = await fetch(
-      "https://opentdb.com/api.php?amount=10&category=11&type=multiple"
+      "https://anapioficeandfire.com/api/characters?page=1&pageSize=10"
     );
 
     const data = await response.json();
 
-    questions = data.results.map((q) => {
-      // Merge correct + incorrect answers
-      const allOptions = [
-        ...q.incorrect_answers,
-        q.correct_answer,
+    questions = data.map((character) => {
+      const correctAnswer =
+        character.name || "Unknown";
+
+      const fakeOptions = [
+        "Jon Snow",
+        "Arya Stark",
+        "Tyrion Lannister",
+        "Daenerys Targaryen",
       ];
 
-      // Shuffle options
-      allOptions.sort(() => Math.random() - 0.5);
+      const options = [
+        ...fakeOptions
+          .filter((name) => name !== correctAnswer)
+          .slice(0, 3),
+        correctAnswer,
+      ];
+
+      // Shuffle
+      options.sort(() => Math.random() - 0.5);
 
       return {
-        question: decodeHTML(q.question),
-
-        options: allOptions.map((option) =>
-          decodeHTML(option)
-        ),
-
-        answer: decodeHTML(q.correct_answer),
+        question: `Who is known by the alias "${
+          character.aliases[0] || "Unknown"
+        }"?`,
+        options,
+        answer: correctAnswer,
       };
     });
   } catch (error) {
