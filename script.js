@@ -23,42 +23,72 @@ let answered = false;
 async function fetchQuestions() {
   try {
     const response = await fetch(
-      "https://anapioficeandfire.com/api/characters?page=1&pageSize=10"
+      "https://the-trivia-api.com/v2/questions?categories=film_and_tv&limit=20"
     );
 
     const data = await response.json();
 
-    questions = data.map((character) => {
-      const correctAnswer =
-        character.name || "Unknown";
+    // Filter Game of Thrones related questions
+    const gotQuestions = data.filter((q) => {
+      const text =
+        q.question.text.toLowerCase();
 
-      const fakeOptions = [
-        "Jon Snow",
-        "Arya Stark",
-        "Tyrion Lannister",
-        "Daenerys Targaryen",
-      ];
+      return (
+        text.includes("game of thrones") ||
+        text.includes("jon snow") ||
+        text.includes("stark") ||
+        text.includes("lannister") ||
+        text.includes("targaryen") ||
+        text.includes("dragon")
+      );
+    });
 
+    questions = gotQuestions.map((q) => {
       const options = [
-        ...fakeOptions
-          .filter((name) => name !== correctAnswer)
-          .slice(0, 3),
-        correctAnswer,
+        ...q.incorrectAnswers,
+        q.correctAnswer,
       ];
 
-      // Shuffle
+      // Shuffle options
       options.sort(() => Math.random() - 0.5);
 
       return {
-        question: `Who is known by the alias "${
-          character.aliases[0] || "Unknown"
-        }"?`,
+        question: q.question.text,
         options,
-        answer: correctAnswer,
+        answer: q.correctAnswer,
       };
     });
+
+    // Fallback if API gives less questions
+    if (questions.length < 5) {
+      questions = [
+        {
+          question:
+            "Who killed the Night King?",
+          options: [
+            "Jon Snow",
+            "Arya Stark",
+            "Jaime Lannister",
+            "The Hound",
+          ],
+          answer: "Arya Stark",
+        },
+
+        {
+          question:
+            "What is the motto of House Stark?",
+          options: [
+            "Winter is Coming",
+            "Fire and Blood",
+            "Hear Me Roar",
+            "Ours is the Fury",
+          ],
+          answer: "Winter is Coming",
+        },
+      ];
+    }
   } catch (error) {
-    console.log("Error Fetching Questions:", error);
+    console.log("Error:", error);
   }
 }
 
